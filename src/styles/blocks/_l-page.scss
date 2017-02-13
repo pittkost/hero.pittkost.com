@@ -1,0 +1,13 @@
+$this: ".l-page";
+
+#{$this} {
+  @include reset-block;
+
+  #{$this}__main {
+    @include reset-block;
+  }
+
+  #{$this}__footer {
+    @include reset-block;
+  }
+}

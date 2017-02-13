@@ -1,0 +1,116 @@
+@mixin clearfix {
+  &:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: '';
+  }
+}
+
+@mixin rounded {
+  border-radius: 100%;
+}
+
+@mixin reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  color: inherit;
+  position: relative;
+}
+
+@mixin reset-block {
+  @include reset;
+
+  display: block;
+}
+
+@mixin reset-inline-block {
+  @include reset;
+
+  display: inline-block;
+}
+
+@mixin reset-flex {
+  @include reset;
+
+  display: flex;
+}
+
+@mixin reset-inline-flex {
+  @include reset;
+
+  display: inline-flex;
+}
+
+@mixin reset-list {
+  @include reset-block;
+
+  list-style-type: none;
+}
+
+@mixin reset-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin reset-button {
+  @include reset-inline-block;
+
+  text-decoration: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@mixin push-left {
+  margin-left: auto;
+}
+
+@mixin push-right {
+  margin-right: auto;
+}
+
+@mixin push-both {
+  @include push-left;
+
+  @include push-right;
+}
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@mixin scale-font($base, $ratio) {
+  font-size: $base * $ratio;
+  line-height: $base * $ratio * 1.4;
+}
+
+@mixin heading-modifiers($base, $ratio) {
+  @for $i from 1 through 6 {
+    &--h#{$i} {
+      @include scale-font($base, pow($ratio, 7 - $i));
+    }
+  }
+}
+
+@mixin font($family, $size, $ratio) {
+  font-family: $family;
+
+  @include scale-font($size, $ratio);
+}
+
+@mixin prevent-collapsing {
+  padding-top: 0.1px;
+  padding-bottom: 0.1px;
+}

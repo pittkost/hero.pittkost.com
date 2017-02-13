@@ -1,0 +1,36 @@
+//define variables
+$space-unit: 10px;
+$wrapper-width: 800px;
+$breakpoints: ("full": "screen and (min-width: #{$wrapper-width})");
+
+$theme-color: #ff4028;
+$basic-color: #fff;
+$contrast-color: #000446;
+
+$normal-font-size: 20px;
+$decorative-font-size: 24px;
+
+$normal-font-family: "Nunito Sans", sans-serif;
+$decorative-font-family: "Slabo 27px", serif;
+
+$quick-transition: 250ms;
+$slow-transition: 750ms;
+
+// load mixins
+@import "mixins";
+
+// load assets
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i|Slabo+27px&subset=latin-ext");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+// load blocks
+@import "blocks/l-page";
+@import "blocks/l-wrapper";
+@import "blocks/c-hero";
+@import "blocks/c-footer";
+@import "blocks/c-social-links";
+
+body {
+  @include reset-block;
+}

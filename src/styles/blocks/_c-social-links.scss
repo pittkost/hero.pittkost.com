@@ -1,0 +1,26 @@
+$this: ".c-social-links";
+
+#{$this} {
+  @include reset-list;
+
+  margin: 0 -#{$space-unit};
+
+  #{$this}__item {
+    @include reset-inline-block;
+
+    margin: 0 $space-unit;
+  }
+
+  #{$this}__link {
+    @include reset-link;
+
+    @include font($decorative-font-family, $normal-font-size, 1.1);
+
+    color: $basic-color;
+    transition: $quick-transition;
+
+    &:hover {
+      color: $theme-color;
+    }
+  }
+}

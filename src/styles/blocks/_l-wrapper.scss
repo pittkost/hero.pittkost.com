@@ -1,0 +1,10 @@
+$this: ".l-wrapper";
+
+#{$this} {
+  @include reset-block;
+
+  @include push-both;
+
+  padding: 0 ($space-unit * 2);
+  max-width: $wrapper-width;
+}

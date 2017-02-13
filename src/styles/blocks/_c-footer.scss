@@ -1,0 +1,25 @@
+$this: ".c-footer";
+
+#{$this} {
+  @include reset-block;
+
+  padding-bottom: $space-unit * 6;
+  background: $contrast-color;
+
+  #{$this}__nav {
+    @include reset-block;
+  }
+
+  #{$this}__paragraph {
+    @include reset-block;
+
+    margin-top: $space-unit * 2;
+    color: $basic-color;
+
+    @include font($normal-font-family, $normal-font-size, 0.7);
+
+    @media #{map-get($breakpoints, "full")} {
+      @include font($normal-font-family, $normal-font-size, 0.8);
+    }
+  }
+}
