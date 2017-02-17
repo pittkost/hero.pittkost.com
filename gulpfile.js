@@ -17,7 +17,7 @@ gulp.task('default', [
 
 gulp.task('build', [
   'assets',
-  //'images',
+  'images',
   'scripts',
   'styles',
   'templates'
@@ -30,6 +30,12 @@ gulp.task('rebuild', [
   'build'
 ], function() {
   console.log('\n[OK] Rebuilding compleated successfully\n');
+})
+
+gulp.task('deploy', [
+  'gh-pages'
+], function() {
+  console.log('\n[OK] Deployment compleated successfully\n');
 })
 
 gulp.task('watch', () => {
