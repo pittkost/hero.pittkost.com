@@ -3,11 +3,15 @@ $this: ".l-page";
 #{$this} {
   @include reset-block;
 
+  overflow: hidden;
+
   #{$this}__main {
     @include reset-block;
   }
 
   #{$this}__footer {
     @include reset-block;
+
+    margin: -1px 0;
   }
 }

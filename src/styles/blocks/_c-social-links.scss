@@ -14,9 +14,8 @@ $this: ".c-social-links";
   #{$this}__link {
     @include reset-link;
 
-    @include font($decorative-font-family, $normal-font-size, 1.1);
+    @include font($decorative-font-family, $normal-font-size, 2);
 
-    color: $basic-color;
     transition: $quick-transition;
 
     &:hover {

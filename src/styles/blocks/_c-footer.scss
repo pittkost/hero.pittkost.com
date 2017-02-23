@@ -3,8 +3,13 @@ $this: ".c-footer";
 #{$this} {
   @include reset-block;
 
-  padding-bottom: $space-unit * 6;
+  padding: ($space-unit * 4) 0;
   background: $contrast-color;
+  color: $basic-color;
+
+  @media #{map-get($breakpoints, "full")} {
+    padding: ($space-unit * 6) 0;
+  }
 
   #{$this}__nav {
     @include reset-block;
@@ -14,7 +19,6 @@ $this: ".c-footer";
     @include reset-block;
 
     margin-top: $space-unit * 2;
-    color: $basic-color;
 
     @include font($normal-font-family, $normal-font-size, 0.7);
 

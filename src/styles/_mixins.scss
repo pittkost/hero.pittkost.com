@@ -93,7 +93,7 @@
 
 @mixin scale-font($base, $ratio) {
   font-size: $base * $ratio;
-  line-height: $base * $ratio * 1.4;
+  line-height: $base * $ratio * 1.618;
 }
 
 @mixin heading-modifiers($base, $ratio) {

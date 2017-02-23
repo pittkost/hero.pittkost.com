@@ -5,7 +5,7 @@ $this: ".c-hero";
 
   @include prevent-collapsing;
 
-  padding: ($space-unit * 6) 0;
+  padding: ($space-unit * 4) 0;
   min-height: 100vh;
   background: $contrast-color;
   color: $basic-color;
@@ -14,10 +14,10 @@ $this: ".c-hero";
     background: lighten($contrast-color, 80);
   }
 
-  @include font($normal-font-family, $normal-font-size, 0.8);
+  @include font($normal-font-family, $normal-font-size, 0.9);
 
   @media #{map-get($breakpoints, "full")} {
-    padding: ($space-unit * 8) 0;
+    padding: ($space-unit * 6) 0;
 
     @include font($normal-font-family, $normal-font-size, 1);
   }
@@ -37,20 +37,23 @@ $this: ".c-hero";
   #{$this}__pic {
     @include reset-inline-block;
 
-    @include rounded;
-
-    max-height: 120px;
+    border-radius: 2px;
+    max-height: 120;
     max-width: 120px;
-    margin-bottom: $space-unit * 2;
+    margin-bottom: $space-unit * 3;
+
+    @media #{map-get($breakpoints, "full")} {
+      margin-bottom: $space-unit * 4;
+    }
   }
 
   #{$this}__title {
     @include reset-block;
 
-    @include font($decorative-font-family, $decorative-font-size, 1.2);
+    @include font($decorative-font-family, $decorative-font-size, 1.8);
 
     @media #{map-get($breakpoints, "full")} {
-      @include font($decorative-font-family, $decorative-font-size, 2.2);
+      @include font($decorative-font-family, $decorative-font-size, 2.4);
     }
 
     font-weight: normal;
@@ -61,14 +64,12 @@ $this: ".c-hero";
 
     margin-top: $space-unit * 2;
 
-    @include font($normal-font-family, $normal-font-size, 0.7);
+    @include font($normal-font-family, $normal-font-size, 0.9);
 
     @media #{map-get($breakpoints, "full")} {
-      @include font($normal-font-family, $normal-font-size, 0.9);
+      @include font($normal-font-family, $normal-font-size, 1);
     }
 
-    padding: $space-unit;
-    border-left: 1px solid $theme-color;
     text-transform: uppercase;
     font-weight: normal;
     color: $theme-color;
@@ -78,33 +79,53 @@ $this: ".c-hero";
     @include reset-block;
 
     margin-top: $space-unit * 2;
+    color: $basic-color;
+
+    &--hidden {
+      display: none;
+    }
   }
 
   #{$this}__button {
     @include reset-button;
 
-    padding: $space-unit ($space-unit * 3);
+    padding: $space-unit ($space-unit * 2);
     background: $theme-color;
     color: $basic-color;
-    border-radius: 3px;
+    border-radius: 2px;
+    text-align: center;
 
-    @include font($normal-font-family, $normal-font-size, 0.8);
+    &:not(:first-child) {
+      margin-top: $space-unit;
+    }
+
+    @media #{map-get($breakpoints, "full")} {
+      padding: ($space-unit * 1.5) ($space-unit * 3);
+      display: inline-block;
+      width: auto;
+    }
+
+    @include font($normal-font-family, $normal-font-size, 1);
 
     text-transform: uppercase;
     transition: $quick-transition;
 
     &:hover {
+      background: lighten($theme-color, 10);
+    }
+
+    &:focus {
       background: darken($theme-color, 10);
     }
 
     &--secondary {
+      box-shadow: 0 0 0 2px $theme-color inset;
       background: none;
       color: $theme-color;
-      box-shadow: 0 0 0 2px darken($theme-color, 5) inset;
 
       &:hover {
         box-shadow: none;
-        color: $contrast-color;
+        color: $basic-color;
       }
     }
   }
